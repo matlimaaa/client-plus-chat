@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  vuejs:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app # Mapeia o código-fonte do host para o contêiner
+    tty: true
+    stdin_open: true
+    command: 'yarn run serve'
